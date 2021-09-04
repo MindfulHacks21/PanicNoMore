@@ -142,30 +142,62 @@ const char1Texture = PIXI.Texture.from('./images/Slime.png');
 const char1Sprite = new PIXI.Sprite(char1Texture);
 app.stage.addChild(char1Sprite);
 
+char1Sprite.width = 100;
+char1Sprite.height = 100;
+
+// set the image anchor to the center of the image
+char1Sprite.anchor.x = 0.5; 
+char1Sprite.anchor.y = 0.5; 
+
+char1Sprite.x = 200;
+char1Sprite.y = 300;
+
 // can also use the sprite from method
 const char2Sprite = PIXI.Sprite.from('./images/flyingSlime.png');
 app.stage.addChild(char2Sprite);
 
+char2Sprite.scale.x = 0.5;
+char2Sprite.scale.y = 1.5;
+
+char2Sprite.x = 200;
+char2Sprite.y = 300;
+
+char2Sprite.rotation = 1; // unit is radians
 
 
-// app.ticker.add(delta => loop(delta))
-// // loop is the arbitrary name of the function that will be called by the ticker method
+const char3Sprite = PIXI.Sprite.from('./images/slime.png');
+app.stage.addChild(char3Sprite);
 
-// // loop holds all the function to be executed
-// function loop(delta) {
-//     // every shape is an instance of it
-//     const rectangle = new Graphics();
+char3Sprite.scale.set(0.1, 0.1);
 
-//     // transforming the shape into a rectangle
-//     rectangle.beginFill(0xAA33BB);
-//     rectangle.drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 10, 10); // coords then width and height
-//     rectangle.endFill();
+char3Sprite.anchor.set(0.5, 0.5);
 
-//     // note the methods are chainable, can call them together for the same rectangle
+char3Sprite.position.set(50, 50);
 
-//     // call the stage and add the rectangle
-//     app.stage.addChild(rectangle);
-// }
+
+
+
+
+
+
+
+
+
+app.ticker.add(delta => loop(delta))
+// loop is the arbitrary name of the function that will be called by the ticker method
+
+// loop holds all the function to be executed
+function loop(delta) {
+    // const rectangle = new Graphics();
+    // rectangle.beginFill(0xAA33BB);
+    // rectangle.drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 10, 10); // coords then width and height
+    // rectangle.endFill();
+    // app.stage.addChild(rectangle);
+
+
+    char1Sprite.x += 1;    
+    char1Sprite.rotation += 0.5;
+}
 
 // number of frames per second depends on the users monitor
 // eg 60 Hz monitor, loop called 60 times per second
