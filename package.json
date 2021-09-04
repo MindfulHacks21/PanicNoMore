@@ -1,0 +1,22 @@
+{
+  "name": "panicdrill",
+  "version": "1.0.0",
+  "description": "A simulation to help you manage your emotions and reactions in distressing situations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindfulHacks21/PanicDrill.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MindfulHacks21/PanicDrill/issues"
+  },
+  "homepage": "https://github.com/MindfulHacks21/PanicDrill#readme",
+  "dependencies": {
+    "pixi.js": "^6.1.2"
+  }
+}
