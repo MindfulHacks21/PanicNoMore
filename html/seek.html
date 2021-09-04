@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeekHelp</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../html/index.html">
+                    <img src="../images/Slime.png" height="25px">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="../html/index.html">Home</a></li>
+                <li><a href="../html/panic.html">Panic!</a></li>
+                <li><a href="../html/myths.html">Bust Myths!</a></li>
+                <li class="active" id="navbar-active"><a href="../html/seek.html">Get Help!</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">&#128587; SEEK HELP &#128587;</h2>
+            <p>Do not hesitate to reach out if you are feeling weighed down by issues. If you need to talk to
+                someone about what you are experiencing, do not hesitate to reach out. With helplines available for
+                you to call, you can speak about the issues affecting you and get help that you may need.</p>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div class="container">
+                <h3 class="title">📞 Helplines 📞</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box" width="100%"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyQIoC6bXpkgYVM7TpKBtcp4W4-VZ4bXLM2YU92oaNzlV0orr4&usqp=CAU"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">National Care Hotline</p>
+                                    <p class="subtitle is-6">1800-202-6868 </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box"
+                                    src="https://scontent.fsin3-1.fna.fbcdn.net/v/t1.6435-9/41013461_2046438772085903_612558943108988928_n.png?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=zQud2hxStd8AX-AqVJb&_nc_ht=scontent.fsin3-1.fna&oh=3ed34529832c4903a8c42ebc0288e6a1&oe=61579997"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Samaritans of Singapore (SOS)</p>
+                                    <p class="subtitle is-6">1800-221-4444</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box" width="100%"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJcFZsFa2VWn6FKGW8WuboPdypJe0wv-dqlLC0DQLVywCBgVBguHr8P8MXQ_EJXpyHqqg&usqp=CAU"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Institute of Mental Health’s Helpline</p>
+                                    <p class="subtitle is-6">6389-2222</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box"
+                                    src="https://pbs.twimg.com/profile_images/1173644937864179713/QKXnivje_400x400.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Silver Ribbon Singapore</p>
+                                    <p class="subtitle is-6">6385-3714</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box"
+                                    src="data:image/png;base64,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"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">TOUCHline (Counselling)</p>
+                                    <p class="subtitle is-6">1800-377-2252</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </section>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <h2 class="title">Other Resources</h2>
+            <p>We all need to take responsibility for our mental health and practice mindfulness. Thankfully, with
+                plenty of online resources, some of which are even free, mental health care has become more convenient
+                and accessible to everyone. We've compiled a small list below for you to check out some ways to improve
+                you mental well-being.</p>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+            <div class="container">
+                <h3 class="title">📱 Recommended Apps 📱</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://scontent.fsin3-1.fna.fbcdn.net/v/t1.6435-9/96361641_848164072260236_1412015256414191616_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=j8rNU6lnbRQAX_XJh49&_nc_ht=scontent.fsin3-1.fna&oh=be87ff3618663de61110fa0e12ec112c&oe=61571F17"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">CARA Unmask</p>
+                                    <a target="_blank" href="https://apps.apple.com/sg/app/cara-unmask/id1451062176">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://startupjobs.asia/assets/company/mindfi-sg/logo/Nrs7ow1PgfvUw3WYcDUPU9PcV5ER2/ZQceOwPyXi6fLoaMiVfOfLDIBxy5J-1542901945GX_UKPOm.png"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">MindFi</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/sg/app/mindfi-mindfulness-anytime/id1237105346">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://static-s.aa-cdn.net/img/gp/20600013249493/L2zhopLajvmgmnmoLB1ACRjQ7V5pEOuMUmPYJ3UiLSUZ_64VEUs0gjLzTY874Ng-dbEm=s300?v=1"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Intellect</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/my/app/intellect-create-a-better-you/id1483308512">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="http://medici-social.s3.amazonaws.com/linkedin_data/images/https://www.linkedin.com/company/touchkin/image"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Wysa</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/us/app/wysa-mental-health-support/id1166585565">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow" src="https://app.safespace.sg/images/logo@3x.png"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Safe Space</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/sg/app/safe-space-counselling/id1566127801">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://is3-ssl.mzstatic.com/image/thumb/Purple115/v4/f4/81/46/f48146ac-1a0e-7d25-8452-1836a0b73b7f/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/434x0w.webp"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Happify</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/sg/app/happify-for-stress-worry/id730601963">
+                                        <p class="subtitle is-6">Available on the App Store</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br>
+
+
+            <div class="container">
+                <h3 class="title">&#128218; Recommended Books &#128218;</h3>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://www.verywellmind.com/thmb/VcjE85rEPArWsOJ8VlUuqEr2Z9U=/fit-in/280x230/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/thisisdepression-ae6197a2d3e046288e2f4703a40c2638.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">This Is Depression</p>
+                                    <a target="_blank"
+                                        href="https://apps.apple.com/sg/app/cara-unmask/id1451062176https://www.amazon.com/dp/1989025560?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn5c787c94022940b4895a63792bf9119309">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://m.media-amazon.com/images/I/41MvgJTHD6L._SL500_.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">
+                                        We've Been Too Patient
+                                    </p>
+                                    <a target="_blank"
+                                        href="https://www.amazon.com/dp/1623173612?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn5c787c94022940b4895a63792bf9119309">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://m.media-amazon.com/images/I/51m3IooWk3L._SL500_.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">This Too Shall Pass</p>
+                                    <a target="_blank"
+                                        href="https://www.amazon.com/dp/0241348862?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn5c787c94022940b4895a63792bf9119309">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="card-image square">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://m.media-amazon.com/images/I/41CFy-WYE8L._SL500_.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Own Your Self</p>
+                                    <a target="_blank"
+                                        href="https://www.amazon.com/dp/1401956823?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn5c787c94022940b4895a63792bf9119309">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://m.media-amazon.com/images/I/41OqT2ywkPL._SL500_.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Own Your Anxiety</p>
+                                    <a target="_blank"
+                                        href="https://www.amazon.com/dp/1989025625?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn02a5dcbe76f14f369e201800ae59128d13">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center square">
+                        <div class="card-image">
+                            <figure>
+                                <img class="img_box shadow"
+                                    src="https://m.media-amazon.com/images/I/31U98OdL-5L._SL500_.jpg"
+                                    alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                    <p class="title is-4">Be Calm</p>
+                                    <a target="_blank"
+                                        href="https://www.amazon.com/dp/1641522089?tag=dotdashvwm-20&linkCode=ogi&th=1&psc=1&ascsubtag=4799301%7Cn02a5dcbe76f14f369e201800ae59128d13">
+                                        <p class="subtitle is-6">Available on Amazon</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
