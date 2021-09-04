@@ -9,7 +9,17 @@ It is built with the use of HTML/CSS and Javascript, particularly with the use o
 * Hope to be able to use as a platform for students to better prepare and equip themselves with knowledge of mental health, to help themselves and others.
 * Gamified Learning Scenarios - Expansion of the possible scenarios to reach more than just situations faced due to academic stress, but also venture into the field of relationship issues, family pressure as well as adulting stress.
 
+## Installation, build, and usage
+To install the project and run on localhost:
+1. Simply clone this repo using [this link](https://github.com/MindfulHacks21/PanicNoMore.git)
+    1. `git clone https://github.com/MindfulHacks21/PanicNoMore.git`  
+2. Open the command line in the folder where the .git file is
+3. Run `npm install to install` the required packages. 
+4. Then run `python -m http.server` to start a localhost server
+5. Go to your localhost server (eg http://localhost:5500/index.js) to test out the website!
 
+To try out the website directly:
+1. Visit the link below!
 
 Dont forget to check it out yourself!
 
