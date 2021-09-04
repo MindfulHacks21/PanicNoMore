@@ -230,7 +230,7 @@ console.log(char5Sprite.getGlobalPosition());
 // get all children of a container
 console.log(container.children);
 
-// can also reposition container like we do with shapes and sprites
+// note: can also reposition container like we do with shapes and sprites
 
 
 // particle container similar to regular container but better performance, limited features
@@ -264,22 +264,61 @@ const loader = PIXI.Loader.shared;
 loader.add(['./images/flyingSlime.png', './images/shieldingSlime.png']);
 
 
+// // setup calls the logic to run once the asset is loaded
+// loader.load(setup);
+
+// // setup function name is arbitrary
+// function setup(loader, resources) {
+//     const char6Sprite = new PIXI.Sprite(
+//         // char4Texture is the property holding the loaded image
+//         // resources.char4Texture.texture
+//         resources['./images/flyingSlime.png'].texture
+//     );
+//     char6Sprite.y = 400;
+//     app.stage.addChild(char6Sprite)
+// }
+
+//loader signals
+loader.onLoad.add(function() {
+    // an asset is loaded
+    console.log("onLoad");
+});
+loader.onError.add(function() {
+    // loader fails to load a file
+    console.log("onError");
+});
+loader.onProgress.add(function() {
+    // loader tries to load a file (fails or sucess also signaled)
+    console.log("onProgress");
+});
+
+
+// loading a tile set to the stage, for multiple images
+// reduces loading time to load just 1 image, sprite sheet
+loader.add('tileset', './images/forestSpriteSheetPlaceholder.jpg');
+
+
 // setup calls the logic to run once the asset is loaded
 loader.load(setup);
 
 // setup function name is arbitrary
 function setup(loader, resources) {
-    const char6Sprite = new PIXI.Sprite(
-        // char4Texture is the property holding the loaded image
-        // resources.char4Texture.texture
-        resources['./images/flyingSlime.png'].texture
-    );
-    char6Sprite.y = 400;
-    app.stage.addChild(char6Sprite)
+    const texture1 = resources.tileset.texture;
+    const rect1 = new PIXI.Rectangle(0, 0, 100, 100); // coords then width and height
+    texture1.frame = rect1;
+    const spr1 = new PIXI.Sprite(texture1);
+    spr1.scale.set(0.7, 0.7);
+    app.stage.addChild(spr1);
+
+    // note need to make a new instance of the PIXI texture class otherwise it will point to the same object
+    const texture2 = new PIXI.Texture(resources.tileset.texture);
+    const rect2 = new PIXI.Rectangle(500, 200, 400, 400); // coords then width and height
+    texture2.frame = rect2;
+    const spr2 = new PIXI.Sprite(texture2);
+    spr2.scale.set(0.5, 0.5);
+    spr2.position.set(200,400)
+    app.stage.addChild(spr2);
 }
-
-
-
 
 app.ticker.add(delta => loop(delta))
 // loop is the arbitrary name of the function that will be called by the ticker method
