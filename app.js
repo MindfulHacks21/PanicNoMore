@@ -1,3 +1,10 @@
+
+// note u need to install the pixi before using
+// npm install pixi.js
+
+// to run local host on windows to avoid the security issue, use this command:
+// python -m http.server
+
 const Application = PIXI.Application;
 
 const app = new Application({
@@ -36,4 +43,65 @@ rectangle.endFill();
 // call the stage and add the rectangle
 app.stage.addChild(rectangle);
 
+
+// craete a polygon
+const poly = new Graphics();
+poly.beginFill(0xFFB3E3)
+.lineStyle(5, 0x3BA3F3)
+.drawPolygon(
+    600, 50,
+    800, 150,
+    900, 300,
+    400, 400
+)
+.endFill();
+// draw polygon takes an array of numbers as an arg, each pair represent a point
+
+app.stage.addChild(poly);
+
+// draw a circle
+const circle = new Graphics();
+circle.beginFill(0x22AACC)
+.drawCircle(440, 200, 80) 
+.endFill();
+// draw circle is the coords then the radius
+
+app.stage.addChild(circle);
+
+// last added child appears on top of the stage 
+
+// can also add lines
+
+const line = new Graphics();
+line.lineStyle(3, 0xFFEA00, 1)
+.moveTo(1500, 100)
+.lineTo(1500, 800);
+// specify the coordinates of the first point using the move to method
+// line to to speific coordinates of the second end of the line
+
+app.stage.addChild(line);
+
+
+// add more complex shapes by installing the graphics extras module
+// npm install @pixi/graphics-extras
+// and link to it in the html code
+
+const torus = new Graphics();
+
+torus.beginFill(0xFFFDDD)
+.drawTorus(100, 700, 80, 100, 0, Math.PI / 2)
+// coordinates of the center of the torus
+// optional last 2 arg to indicate the start and end of the arc to draw
+.endFill();
+
+app.stage.addChild(torus);
+
+const star = new Graphics();
+
+star.beginFill(0xFFFDDD)
+.drawStar(900, 700, 30, 80)
+// coordinates of the center of the torus, then number of points, then radius
+.endFill();
+
+app.stage.addChild(star);
 
