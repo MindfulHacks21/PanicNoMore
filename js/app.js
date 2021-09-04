@@ -38,19 +38,19 @@ document.body.appendChild(app.view);
 
 //////////// load backgrounds
 
-const roomTexture1 = PIXI.Texture.from('./images/rooms/LivingRoom.png');
-const roomTexture2 = PIXI.Texture.from('./images/rooms/Bedroom.png');
-const roomTexture3 = PIXI.Texture.from('./images/rooms/Kitchen.png');
+const roomTexture1 = PIXI.Texture.from('../images/rooms/LivingRoom.png');
+const roomTexture2 = PIXI.Texture.from('../images/rooms/Bedroom.png');
+const roomTexture3 = PIXI.Texture.from('../images/rooms/Kitchen.png');
 
-const heartTexture = PIXI.Texture.from('./images/heart.png');
+const heartTexture = PIXI.Texture.from('../images/heart.png');
 
-const disasterTexture = PIXI.Texture.from('./images/disaster.jpg');
-const congratsTexture = PIXI.Texture.from('./images/fireworks.jpg');
+const disasterTexture = PIXI.Texture.from('../images/disaster.jpg');
+const congratsTexture = PIXI.Texture.from('../images/fireworks.jpg');
 
 
 //////////// set up the fire
 
-const fireTexture = PIXI.Texture.from('./images/fire.png');
+const fireTexture = PIXI.Texture.from('../images/fire.png');
 
 /////  1
 const fireSprite1 = new PIXI.Sprite(fireTexture);
