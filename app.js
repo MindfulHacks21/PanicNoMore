@@ -359,3 +359,12 @@ function loop(delta) {
 // there is room for some lag and the duration of that lag is stored in the delta parameter
 
 
+
+
+// adding music
+const sound = new Howl({
+    src: ['./audio/testNotes.wav']
+
+})
+
+sound.play();

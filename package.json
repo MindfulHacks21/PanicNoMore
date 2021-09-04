@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MindfulHacks21/PanicDrill#readme",
   "dependencies": {
     "@pixi/graphics-extras": "^6.1.2",
+    "howler": "^2.2.3",
     "pixi.js": "^6.1.2"
   }
 }
