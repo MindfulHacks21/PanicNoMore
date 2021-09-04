@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanicDrill</title>
+    <title>Panic!</title>
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         * {
             padding: 0;
@@ -19,7 +23,22 @@
     <script src="../node_modules/pixi.js/dist/browser/pixi.min.js"></script>
     <script src="../node_modules/@pixi/graphics-extras/dist/browser/graphics-extras.min.js"></script>
     <script src="../node_modules/howler/dist/howler.min.js"></script>
+
+    <nav class="navbar navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../images/Slime.png" height="25px">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li class="active" id="navbar-active"><a href="../html/panic_index.html">Panic!</a></li>
+                <li><a href="../html/myths.html">Bust Myths!</a></li>
+                <li><a href="../html/seek.html">Get Help!</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <script src="../js/app.js"></script>
 </body>
-
-</html>
