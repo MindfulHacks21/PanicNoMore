@@ -1,8 +1,8 @@
 # Panic! No more 
-## What
+## What is it about
 Panic! No more is a project we created with the goal to educate and empower individuals to take responsibility for their own mental health and wellness, and to encourage them to practice mindfulness in the long term.
 
-## How
+## How was it created
 It is built with the use of HTML/CSS and Javascript, particularly with the use of the pixiJS library for some cool animations in the interactive game.
 
 ## What's next for Panic! No more 
