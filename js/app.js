@@ -26,9 +26,9 @@ app.renderer.backgroundColor = 0x33395D;
 // resize the canvas
 app.renderer.resize(700, 500);
 
-app.renderer.view.style.transform = 'translate3d( ' 
-    + String((window.innerWidth - app.renderer.width) / 2 / app.renderer.width * 100) + '%, ' 
-    + String((window.innerHeight - app.renderer.height) / 2 / app.renderer.height * 100) + '%, 0 )';
+app.renderer.view.style.transform = 'translate3d( -50%, 0%, 0)';
+    // + String((window.innerWidth - app.renderer.width) / 2 / app.renderer.width * 100) + '%, ' 
+    // + String((window.innerHeight - app.renderer.height) / 2 / app.renderer.height * 100) + '%, 0 )';
 
 // change the style of the canvas and set position to absolute
 // remove any default margins and paddings
@@ -512,6 +512,7 @@ renderScene();
 //////// functions
 function goHome() {
     // integration
+    location.replace("../index.html");
 }
 
 function renderHearts() {
@@ -562,6 +563,9 @@ function gameOver(isGameOver){
 
     replayRect.interactive = isGameOver;
     replayRect.buttonMode = isGameOver;
+
+    homeBtnRect.interactive = isGameOver;
+    homeBtnRect.buttonMode = isGameOver;
 
     replayRect.visible = isGameOver;
     replayText.visible = isGameOver;

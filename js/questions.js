@@ -2,10 +2,10 @@ data = '[' +
 
 '{ "section" : 1, "info" : [' +
 
- '{"question" : "Conflict within her project team",' +
-  ' "good" : "Approach team members to talk to them", ' +
-  ' "bad" : "Leave the team and work on your own!", ' +
-  ' "tip" : "Conflict management tips" },' +
+ '{"question" : "Multiple approaching deadlin",' +
+  ' "good" : "Prioritise the work with earliest deadline", ' +
+  ' "bad" : "SCREW IT", ' +
+  ' "tip" : "Use a planner, practice better time management" },' +
 
   '{"question" : "Presentation tomorrow and you have not really prepared yet",' +
   ' "good" : "Practice and prepare and then make sure to get a good night’s rest", ' +
