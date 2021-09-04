@@ -105,3 +105,22 @@ star.beginFill(0xFFFDDD)
 
 app.stage.addChild(star);
 
+
+// creating and adding text
+const style = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 48,
+    fill: 'deepskyblue',
+    stroke: '#ffffff',
+    strokeThickness: 4,
+    dropShadow: true,
+    dropShadowDistance: 10,
+    dropShadowAngle: Math.PI / 2,
+    dropShadowBlur: 4,
+    dropShadowColor: '#000000'
+})
+// fill may also accept hex code for a color?
+
+const myText = new PIXI.Text('Hello World!', style);
+
+app.stage.addChild(myText);
