@@ -29,21 +29,6 @@ document.body.appendChild(app.view);
 // shapes in pixi stored in the graphics class
 const Graphics = PIXI.Graphics;
 
-// every shape is an instance of it
-const rectangle = new Graphics();
-
-// transforming the shape into a rectangle
-rectangle.beginFill(0xAA33BB);
-rectangle.lineStyle(4, 0xFFEA00, 0.8); // linewidth, color, alpha (0-1)
-rectangle.drawRect(200, 200, 100, 120); // coords then width and height
-rectangle.endFill();
-
-// note the methods are chainable, can call them together for the same rectangle
-
-// call the stage and add the rectangle
-app.stage.addChild(rectangle);
-
-
 // craete a polygon
 const poly = new Graphics();
 poly.beginFill(0xFFB3E3)
@@ -136,5 +121,29 @@ myText.style.align = 'center';
 // pixi js has a solution built on top of the request animation frame method
 
 
+app.ticker.add(delta => loop(delta))
+// loop is the arbitrary name of the function that will be called by the ticker method
 
-app.stage.addChild(myText);
+// loop holds all the function to be executed
+function loop(delta) {
+    // every shape is an instance of it
+    const rectangle = new Graphics();
+
+    // transforming the shape into a rectangle
+    rectangle.beginFill(0xAA33BB);
+    rectangle.lineStyle(4, 0xFFEA00, 0.8); // linewidth, color, alpha (0-1)
+    rectangle.drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 100, 120); // coords then width and height
+    rectangle.endFill();
+
+    // note the methods are chainable, can call them together for the same rectangle
+
+    // call the stage and add the rectangle
+    app.stage.addChild(rectangle);
+}
+
+// number of frames per second depends on the users monitor
+// eg 60 Hz monitor, loop called 60 times per second
+// there is room for some lag and the duration of that lag is stored in the delta parameter
+
+
+
