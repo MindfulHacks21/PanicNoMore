@@ -122,5 +122,19 @@ const style = new PIXI.TextStyle({
 // fill may also accept hex code for a color?
 
 const myText = new PIXI.Text('Hello World!', style);
+// note the text and style can be changed later
+
+app.stage.addChild(myText);
+
+myText.text = 'Text Changed!';
+myText.style.wordWrap = true;
+myText.style.wordWrapWidth = 100;
+myText.style.align = 'center';
+
+// adding elements to the canvas automatically (dont use set interval!!!)
+// for javascript animations usually use the request animation frame 
+// pixi js has a solution built on top of the request animation frame method
+
+
 
 app.stage.addChild(myText);
