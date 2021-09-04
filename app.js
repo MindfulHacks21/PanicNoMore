@@ -135,28 +135,40 @@ myText.style.align = 'center';
 // pixi js has a solution built on top of the request animation frame method
 
 
-app.ticker.add(delta => loop(delta))
-// loop is the arbitrary name of the function that will be called by the ticker method
 
-// loop holds all the function to be executed
-function loop(delta) {
-    // every shape is an instance of it
-    const rectangle = new Graphics();
+// adding images in pixi js
+// a picture is used to make a texture is used to make a sprite which is placed on the canvas
+const char1Texture = PIXI.Texture.from('./images/Slime.png');
+const char1Sprite = new PIXI.Sprite(char1Texture);
+app.stage.addChild(char1Sprite);
 
-    // transforming the shape into a rectangle
-    rectangle.beginFill(0xAA33BB);
-    rectangle.drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 10, 10); // coords then width and height
-    rectangle.endFill();
+// can also use the sprite from method
+const char2Sprite = PIXI.Sprite.from('./images/flyingSlime.png');
+app.stage.addChild(char2Sprite);
 
-    // note the methods are chainable, can call them together for the same rectangle
 
-    // call the stage and add the rectangle
-    app.stage.addChild(rectangle);
-}
+
+// app.ticker.add(delta => loop(delta))
+// // loop is the arbitrary name of the function that will be called by the ticker method
+
+// // loop holds all the function to be executed
+// function loop(delta) {
+//     // every shape is an instance of it
+//     const rectangle = new Graphics();
+
+//     // transforming the shape into a rectangle
+//     rectangle.beginFill(0xAA33BB);
+//     rectangle.drawRect(Math.random() * app.screen.width, Math.random() * app.screen.height, 10, 10); // coords then width and height
+//     rectangle.endFill();
+
+//     // note the methods are chainable, can call them together for the same rectangle
+
+//     // call the stage and add the rectangle
+//     app.stage.addChild(rectangle);
+// }
 
 // number of frames per second depends on the users monitor
 // eg 60 Hz monitor, loop called 60 times per second
 // there is room for some lag and the duration of that lag is stored in the delta parameter
-
 
 
