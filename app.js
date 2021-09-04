@@ -175,7 +175,32 @@ char3Sprite.anchor.set(0.5, 0.5);
 char3Sprite.position.set(50, 50);
 
 
+// touch and mouse events
+// note that touch events only work on touch screens and mouse events only work with mouses
+// pointer events work in both cases
 
+// need to set the interactive to true to enable event detection on the sprite
+char3Sprite.interactive = true;
+//to make the cursor change on hover over to hint it is clickable
+char3Sprite.buttonMode = true; 
+
+
+// similar to addEventListener function, takes an event and a callback
+char3Sprite.on('pointerdown', function() {
+    // stuff that happens when sprite 3 is clicked
+    char3Sprite.scale.x += 0.1;
+    char3Sprite.scale.y += 0.1;
+} );
+
+// for keyboard events use addEventListener
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'ArrowRight') {
+        char2Sprite.x += 10
+    }
+    if(e.key === 'ArrowLeft') {
+        char2Sprite.x -= 10
+    }
+})
 
 
 
