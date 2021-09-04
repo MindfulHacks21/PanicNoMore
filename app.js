@@ -234,7 +234,51 @@ console.log(container.children);
 
 
 // particle container similar to regular container but better performance, limited features
-const particleContainer = new PIXI.ParticleContainer(1000, {})
+const particleContainer = new PIXI.ParticleContainer(1000, {
+    position: true,
+    rotation: true,
+    vertices: true,
+    tint: true,
+    uvs: true
+
+});
+// first number is number of particles in the container
+// less properties better
+// position means can change position of elements in the particle container
+// rotation allows rotation of elements in the particle container 
+// vertices allows change of position or anchor position or scale
+// uvs, tint for sprites animation
+
+
+// using a loader to load images into the pixi js app
+const loader = PIXI.Loader.shared;
+
+// loader can be used to load multiple asserts, just call the add method with different arguments 
+// can chain call the methods
+// load an image
+// loader.add('char6Texture', './images/flyingSlime.png')
+// .add('char7Texture', './images/phasingSlime.png');
+
+
+// or load it as an array here 
+loader.add(['./images/flyingSlime.png', './images/shieldingSlime.png']);
+
+
+// setup calls the logic to run once the asset is loaded
+loader.load(setup);
+
+// setup function name is arbitrary
+function setup(loader, resources) {
+    const char6Sprite = new PIXI.Sprite(
+        // char4Texture is the property holding the loaded image
+        // resources.char4Texture.texture
+        resources['./images/flyingSlime.png'].texture
+    );
+    char6Sprite.y = 400;
+    app.stage.addChild(char6Sprite)
+}
+
+
 
 
 app.ticker.add(delta => loop(delta))
