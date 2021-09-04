@@ -320,6 +320,24 @@ function setup(loader, resources) {
     app.stage.addChild(spr2);
 }
 
+// loading via sprite sheet and json
+// see video 34 min mark + https://www.codeandweb.com/free-sprite-sheet-packer to generate the sprite sheet and json
+// note that renaming the png and json files may result in a problem
+
+// loader.add('tileset', './images/forestSpriteSheetPlaceholder.json');
+// loader.load(setup);
+
+// function setup(loader, resources) {
+//     const drag11Texture = PIXI.Texture.from('drag11.png'); // image name taken from the json
+//     const drag11Sprite = new PIXI.Sprite(drag11Texture);
+//     drag11Sprite.position.set(300, 600);
+//     drag11Sprite.scale.set(2, 2);
+//     add.stage.addChild(drag11Sprite);
+// }
+
+
+
+
 app.ticker.add(delta => loop(delta))
 // loop is the arbitrary name of the function that will be called by the ticker method
 
