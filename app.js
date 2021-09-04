@@ -1,18 +1,3 @@
-include('./questions.js');
-
-
-// https://www.geeksforgeeks.org/how-to-include-a-javascript-file-in-another-javascript-file/ 
-function include(file) {
-  
-    var script  = document.createElement('script');
-    script.src  = file;
-    script.type = 'text/javascript';
-    script.defer = true;
-    
-    document.getElementsByTagName('head').item(0).appendChild(script);
-    
-  }
-
 // 3 rooms 
 /*
 1 - Living room
@@ -22,6 +7,8 @@ function include(file) {
 var room = 1;
 var fireRemaining = 10;
 var showsQuestion = true;
+var leftGood = false;
+var lives = 3;
 
 ////////////// Set up the Pixi stage
 const Application = PIXI.Application;
@@ -57,6 +44,8 @@ const roomTexture3 = PIXI.Texture.from('./images/rooms/Kitchen.png');
 
 const heartTexture = PIXI.Texture.from('./images/heart.png');
 
+const disasterTexture = PIXI.Texture.from('./images/disaster.jpg');
+const congratsTexture = PIXI.Texture.from('./images/fireworks.jpg');
 
 
 //////////// set up the fire
@@ -83,6 +72,9 @@ fireSprite1.buttonMode = true;
 fireSprite1.on('pointerdown', function() {
     fireSprite1.scale.x -= 0.04;
     fireSprite1.scale.y -= 0.04;
+    if (fireSprite1.scale.x == 0.04) {
+        showsQuestion = true;
+    }
     checkFiresRemainin(1);
 } );
 
@@ -107,6 +99,9 @@ fireSprite2.buttonMode = true;
 fireSprite2.on('pointerdown', function() {
     fireSprite2.scale.x -= 0.04;
     fireSprite2.scale.y -= 0.04;
+    if (fireSprite2.scale.x == 0.04) {
+        showsQuestion = true;
+    }
     checkFiresRemainin(2);
 } );
 
@@ -130,6 +125,9 @@ fireSprite3.buttonMode = true;
 fireSprite3.on('pointerdown', function() {
     fireSprite3.scale.x -= 0.04;
     fireSprite3.scale.y -= 0.04;
+    if (fireSprite3.scale.x == 0.04) {
+        showsQuestion = true;
+    }
     checkFiresRemainin(3);
 } );
 
@@ -154,6 +152,9 @@ fireSprite4.buttonMode = true;
 fireSprite4.on('pointerdown', function() {
     fireSprite4.scale.x -= 0.04;
     fireSprite4.scale.y -= 0.04;
+    if (fireSprite4.scale.x == 0.04) {
+        showsQuestion = true;
+    }
     checkFiresRemainin(4);
 } );
 
@@ -178,6 +179,9 @@ fireSprite5.buttonMode = true;
 fireSprite5.on('pointerdown', function() {
     fireSprite5.scale.x -= 0.04;
     fireSprite5.scale.y -= 0.04;
+    if (fireSprite5.scale.x == 0.04) {
+        showsQuestion = true;
+    }
     checkFiresRemainin(5);
 } );
 
@@ -279,6 +283,130 @@ const rightRect = new Graphics();
 rightRect.beginFill(0xc7feff);
 rightRect.drawRect(385, 200, 180, 180); // coords then width and height
 rightRect.endFill();
+
+leftRect.on('pointerdown', function() {
+    checkAnswerSelected(true);
+} );
+
+rightRect.on('pointerdown', function() {
+    checkAnswerSelected(false);
+} );
+
+questionRect.on('pointerdown', function() {
+    closeQuestionDialog();
+} );
+
+
+///////////////////// end game screen
+
+const disasterBg = new PIXI.Sprite(disasterTexture);
+disasterBg.scale.set(0.95, 0.95);
+
+const styleEndText = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 60,
+    fill: 'red',
+    stroke: '#ffffff',
+    strokeThickness: 4,
+})
+
+const endText = new PIXI.Text('OH NO', styleEndText);
+endText.style.align = 'center';
+endText.position.set(350, 250);
+endText.anchor.set(0.5, 0.5);
+
+const replayRect = new Graphics();
+
+replayRect.beginFill(0x000000);
+replayRect.lineStyle(4, 0xFFEA00, 0.8); // linewidth, color, alpha (0-1)
+replayRect.drawRect(50, 400, 150, 50); // coords then width and height
+replayRect.endFill();
+
+const styleReplayText = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 30,
+    fill: '#ffffff',
+    // stroke: '#ffffff',
+    strokeThickness: 2,
+})
+
+const replayText = new PIXI.Text('Try again', styleReplayText);
+replayText.style.align = 'center';
+replayText.position.set(125, 425);
+replayText.anchor.set(0.5, 0.5);
+
+replayRect.on('pointerdown', function() {
+    restartGame();
+});
+
+const homeBtnRect = new Graphics();
+
+homeBtnRect.beginFill(0x000000);
+homeBtnRect.lineStyle(4, 0xFFEA00, 0.8); // linewidth, color, alpha (0-1)
+homeBtnRect.drawRect(250, 400, 150, 50); // coords then width and height
+homeBtnRect.endFill();
+
+const styleHome = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 30,
+    fill: '#ffffff',
+    // stroke: '#ffffff',
+    strokeThickness: 2,
+})
+
+const homeBtnText = new PIXI.Text('Go Home', styleHome);
+homeBtnText.style.align = 'center';
+homeBtnText.position.set(325, 425);
+homeBtnText.anchor.set(0.5, 0.5);
+
+homeBtnRect.on('pointerdown', function() {
+    goHome();
+});
+
+/////////////////////////////////////
+
+///////////////////// congratulation end game screen
+
+const congratsBg = new PIXI.Sprite(congratsTexture);
+congratsBg.scale.set(2.7, 2.7);
+
+const styleWinText = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 60,
+    fill: 'red',
+    stroke: '#ffffff',
+    strokeThickness: 4,
+})
+
+const hurrayText = new PIXI.Text('HURRAY YOU WIN!', styleWinText);
+hurrayText.style.align = 'center';
+hurrayText.position.set(350, 250);
+hurrayText.anchor.set(0.5, 0.5);
+
+const homeRect = new Graphics();
+
+homeRect.beginFill(0x000000);
+homeRect.lineStyle(4, 0xFFEA00, 0.8); // linewidth, color, alpha (0-1)
+homeRect.drawRect(50, 400, 150, 50); // coords then width and height
+homeRect.endFill();
+
+const styleHomeText = new PIXI.TextStyle({
+    fontFamily: 'Monserrat',
+    fontSize: 30,
+    fill: '#ffffff',
+    // stroke: '#ffffff',
+    strokeThickness: 2,
+})
+
+const homeText = new PIXI.Text('Home', styleHomeText);
+homeText.style.align = 'center';
+homeText.position.set(125, 425);
+homeText.anchor.set(0.5, 0.5);
+
+homeRect.on('pointerdown', function() {
+    goHome();
+});
+
 /////////////////////////////////////
 
 const roomSprite1 = new PIXI.Sprite(roomTexture1);
@@ -333,7 +461,7 @@ app.stage.addChild(rightRect);
 app.stage.addChild(questionText);
 app.stage.addChild(leftText);
 app.stage.addChild(rightText);
-// app.stage.addChild(tipText);
+app.stage.addChild(tipText);
 
 questionText.position.set(350, 150);
 leftText.position.set(225, 280);
@@ -345,18 +473,143 @@ leftText.anchor.set(0.5, 0.5);
 rightText.anchor.set(0.5, 0.5);
 tipText.anchor.set(0.5, 0.5);
 
+leftRect.visible = false;
+rightRect.visible = false;
+leftText.visible = false;
+rightText.visible = false;
+questionText.visible = false;
+questionRect.visible = false;
+tipText.visible = false;
+
+app.stage.addChild(disasterBg);
+app.stage.addChild(endText);
+app.stage.addChild(replayRect);
+app.stage.addChild(replayText);
+app.stage.addChild(homeBtnRect);
+app.stage.addChild(homeBtnText);
+
+app.stage.addChild(congratsBg);
+app.stage.addChild(hurrayText);
+app.stage.addChild(homeRect);
+app.stage.addChild(homeText);
+
+disasterBg.visible = false;
+endText.visible = false;
+replayRect.visible = false;
+replayText.visible = false;
+homeBtnRect.visible = false;
+homeBtnText.visible = false;
+
+congratsBg.visible = false;
+hurrayText.visible = false;
+homeRect.visible = false;
+homeText.visible = false;
+
 
 renderScene();
+
+
+//////// functions
+function goHome() {
+    // integration
+}
+
+function renderHearts() {
+    switch(lives) {
+        case 3:
+            heartSprite3.visible = true;
+            heartSprite2.visible = true;
+            heartSprite1.visible = true;
+            break;
+        case 2:
+            heartSprite3.visible = false;
+            heartSprite2.visible = true;
+            heartSprite1.visible = true;
+            break;
+        case 1:
+            heartSprite3.visible = false;
+            heartSprite2.visible = false;
+            heartSprite1.visible = true;
+            break;
+        default:
+            // end game
+            heartSprite1.visible = false;
+            // run lose end game function
+            gameOver(true);
+    }
+}
+
+function restartGame() {
+    // reset variables
+    showsQuestion = false;
+    lives = 3;
+    room = 1;
+    fireRemaining = 10;
+
+    firesClickable(true);
+
+    // reset view
+    renderHearts();
+    renderScene();
+    removeQuestionDialog();
+    closeQuestionDialog();
+    gameOver(false);
+}
+
+function gameOver(isGameOver){
+    disasterBg.visible = isGameOver;
+    endText.visible = isGameOver;
+
+    replayRect.interactive = isGameOver;
+    replayRect.buttonMode = isGameOver;
+
+    replayRect.visible = isGameOver;
+    replayText.visible = isGameOver;
+    homeBtnRect.visible = isGameOver;
+    homeBtnText.visible = isGameOver;
+}
+
+function checkAnswerSelected(leftClicked){
+    if ((leftClicked && leftGood) || (!leftClicked && !leftGood)){
+        // answered correctly
+        questionText.text = "That's right!";
+    } else {
+        questionText.text = "Oh no! That probably isn't the best choice";
+        lives -= 1;
+        renderHearts();
+    }
+
+    removeQuestionDialog();
+}
+
+function removeQuestionDialog(){
+        // disable the buttons
+        leftRect.interactive = false;
+        leftRect.buttonMode = false;
+        rightRect.interactive = false;
+        rightRect.buttonMode = false;
+    
+        // stop showing buttons and button text
+        leftRect.visible = false;
+        rightRect.visible = false;
+        leftText.visible = false;
+        rightText.visible = false;
+    
+        // enable the big box to be selected
+        questionRect.interactive = true;
+        questionRect.buttonMode = true;
+    
+        // show the response and the tip
+        tipText.visible = true;
+}
 
 function checkFiresRemainin(fireNum) {
     if (showsQuestion) {
         // show the question
-        firesClickable(false);
-        displayQuestion(fireNum);
-        firesClickable(true);
+        displayQuestionOptions(fireNum);
     }
-    
-    showsQuestion = !showsQuestion;
+
+    showsQuestion = false;
     
     fireRemaining -= 1;
 
@@ -364,28 +617,50 @@ function checkFiresRemainin(fireNum) {
 
     if (fireRemaining == 0){
         room += 1;
+        lives = 3;
+        renderHearts();
         fireRemaining = 10;
         renderScene()
+
+        if (room > 3) {
+            winScreen();
+        }
     }
 }
 
-function displayQuestion(fireNum) {
+function winScreen(){
+    // console.log("win");
+    congratsBg.visible = true;
+    hurrayText.visible = true;
+    homeRect.visible = true;
+    homeText.visible = true;
+}
+
+function displayQuestionOptions(fireNum) {
+    firesClickable(false);
+
     // select a question from the json
     var mydata = JSON.parse(data);
-    alert(mydata[room - 1].info[fireNum].question);
-    alert(mydata[room - 1].info[fireNum].good);
-    alert(mydata[room - 1].info[fireNum].bad);
-    alert(mydata[room - 1].info[fireNum].tip);
+
+    question = mydata[room - 1].info[fireNum - 1].question;
+    good = mydata[room - 1].info[fireNum - 1].good;
+    bad = mydata[room - 1].info[fireNum - 1].bad;
+    tip = mydata[room - 1].info[fireNum - 1].tip;
 
     // decide if the good is displayed on the left or right
-    var leftGood = Boolean(Math.round(Math.random()));
+    leftGood = Boolean(Math.round(Math.random()));
+    console.log(leftGood)
+
+    questionText.text = question;
+    tipText.text = tip;
 
     // display options
     if (leftGood) {
         leftText.text = good;
-    } else {
         rightText.text = bad;
-        
+    } else {
+        rightText.text = good;
+        leftText.text = bad;
     }
 
     // enable the buttons
@@ -400,30 +675,24 @@ function displayQuestion(fireNum) {
     leftText.visible = true;
     rightText.visible = true;
 
+    questionRect.visible = true;
+    questionText.visible = true;
 
-    // check if correct selected based on clicks
+    console.log("question part 1 made visible");
 
-    // disable the buttons
-    leftRect.interactive = false;
-    leftRect.buttonMode = false;
-    rightRect.interactive = false;
-    rightRect.buttonMode = false;
+}
 
-    // stop showing buttons and button text
-    leftRect.visible = false;
-    rightRect.visible = false;
-    leftText.visible = false;
-    rightText.visible = false;
-
-    // enable the big box to be selected
+function closeQuestionDialog(){
+    // if the questionRect is selected, make it not interactive and close it
     questionRect.interactive = false;
     questionRect.buttonMode = false;
 
-    // show the response and the tip
+    tipText.visible = false;
+    questionText.visible = false;
+    questionRect.visible = false;
 
-    // if the questionRect is selected, make it not interactive and close it
-    questionRect.interactive = true;
-    questionRect.buttonMode = true;
+    firesClickable(true);
+
 }
 
 function renderScene() {
