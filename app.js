@@ -153,7 +153,7 @@ char1Sprite.x = 200;
 char1Sprite.y = 300;
 
 // can also use the sprite from method
-const char2Sprite = PIXI.Sprite.from('./images/flyingSlime.png');
+const char2Sprite = PIXI.Sprite.from('./images/kingSlimeFlying.png');
 app.stage.addChild(char2Sprite);
 
 char2Sprite.scale.x = 0.5;
@@ -165,7 +165,7 @@ char2Sprite.y = 300;
 char2Sprite.rotation = 1; // unit is radians
 
 
-const char3Sprite = PIXI.Sprite.from('./images/slime.png');
+const char3Sprite = PIXI.Sprite.from('./images/flyingSlime.png');
 app.stage.addChild(char3Sprite);
 
 char3Sprite.scale.set(0.1, 0.1);
@@ -195,17 +195,46 @@ char3Sprite.on('pointerdown', function() {
 // for keyboard events use addEventListener
 document.addEventListener('keydown', function(e) {
     if(e.key === 'ArrowRight') {
-        char2Sprite.x += 10
+        char2Sprite.x += 10;
     }
     if(e.key === 'ArrowLeft') {
-        char2Sprite.x -= 10
+        char2Sprite.x -= 10;
     }
-})
+});
+
+// wrapping groups of sprites into a container
+// eg characters and their weapons
+// if the size is unchange, the size of the container takes the size of the biggest sprite
+
+const container = new PIXI.Container();
+
+const char4Sprite = PIXI.Sprite.from('./images/phasingSlime.png');
+
+container.addChild(char4Sprite);
+
+const char5Sprite = PIXI.Sprite.from('./images/shieldingSlime.png');
+container.addChild(char5Sprite);
+
+app.stage.addChild(container);
+
+// changing the position of the sprite in the container changes the size of the container accordingly
+char5Sprite.position.set(1000, 500);
+container.x = 150;
+
+// position of sprites within the container are relative to the container and not the entire stage
+console.log(char5Sprite);
+
+// to get global positioning of sprites in the container
+console.log(char5Sprite.getGlobalPosition());
+
+// get all children of a container
+console.log(container.children);
+
+// can also reposition container like we do with shapes and sprites
 
 
-
-
-
+// particle container similar to regular container but better performance, limited features
+const particleContainer = new PIXI.ParticleContainer(1000, {})
 
 
 app.ticker.add(delta => loop(delta))
