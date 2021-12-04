@@ -14,7 +14,7 @@ To install the project and run on localhost:
 1. Simply clone this repo using [this link](https://github.com/MindfulHacks21/PanicNoMore.git)
     1. `git clone https://github.com/MindfulHacks21/PanicNoMore.git`  
 2. Open the command line in the folder where the .git file is
-3. Run `npm install to install` the required packages. 
+3. Run `npm install` to install the required packages. 
 4. Then run `python -m http.server` to start a localhost server
 5. Go to your localhost server (eg http://localhost:5500/index.js) to test out the website!
 
