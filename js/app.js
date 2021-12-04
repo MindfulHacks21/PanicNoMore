@@ -776,5 +776,3 @@ function firesClickable(enable) {
     fireSprite5.buttonMode = enable;
 }
 
-
-
